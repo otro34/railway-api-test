@@ -1,0 +1,39 @@
+POST http://localhost:3001/courses
+Content-Type: application/json
+
+{
+    "name": "Web Programming",
+    "level": 7,
+    "idProfessor": 1
+}
+
+############
+
+POST http://localhost:3001/courses
+Content-Type: application/json
+
+{
+    "name": "Object Oriented Programming",
+    "level": 4,
+    "idProfessor": 1
+}
+
+#########
+GET http://localhost:3001/courses
+
+########
+GET http://localhost:3001/courses/2
+###########
+PUT http://localhost:3001/courses
+Content-Type: application/json
+
+{
+    "id": 1,
+    "name": "Web Programming",
+    "level": 6,
+    "idProfessor": 1
+}
+#######
+DELETE http://localhost:3001/courses/1
+
+

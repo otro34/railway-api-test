@@ -26,7 +26,7 @@ Professor.hasMany(Course,{
 })
 
 Course.belongsTo(Professor,{
-    foreignKey: 'projectId',
+    foreignKey: 'idProfessor',
     targetId: 'id'
 })
 

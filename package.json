@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon index.js",
-    "start2": "node index.js",
-    "start": "node index.js --init"
+    "start": "node index.js",
+    "init": "node index.js --init"
   },
   "author": "",
   "license": "ISC",
@@ -19,5 +19,8 @@
     "pg": "^8.8.0",
     "sequelize": "^6.25.6"
   },
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "dotenv": "^16.0.3"
+  }
 }

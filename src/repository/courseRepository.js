@@ -17,17 +17,6 @@ const create = async (course) => {
 
 }
 
-const findAllWithProfessor = async() => {
-
-    try {
-        return await Course.findAll({ include: Professor });
-    } catch(error) {
-        console.error(error)
-        return null
-    }
-
-}
-
 const findAll = async() => {
 
     try {
@@ -45,7 +34,8 @@ const findOne = async(id) => {
         return await Course.findOne({
             where: {
                 id
-            }
+            }, 
+            include: Professor
         })
     } catch (error) {
         console.error(error)
@@ -91,6 +81,6 @@ const remove = async (id) => {
     }
 }
 
-const CoursesRepository = { create, findAll, findOne, update, remove, findAllWithProfessor }
+const CoursesRepository = { create, findAll, findOne, update, remove }
 
 export default CoursesRepository

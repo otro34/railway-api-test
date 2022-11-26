@@ -1,5 +1,6 @@
 
 import Professor from '../models/professor.js'
+import Course from '../models/course.js'
 
 const create = async (professor) => {
 
@@ -19,7 +20,7 @@ const create = async (professor) => {
 const findAll = async() => {
 
     try {
-        return await Professor.findAll();
+        return await Professor.findAll({include: Course});
     } catch(error) {
         console.error(error)
         return null

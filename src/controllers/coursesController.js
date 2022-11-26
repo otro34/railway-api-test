@@ -14,13 +14,6 @@ const findAll = async(req,res) => {
     return sendResponse(courses,res);
 }
 
-const findAllWithProfessor = async(req,res) => {
-
-    const courses = await CourseRepository.findAllWithProfessor();
-
-    return sendResponse(courses,res);
-}
-
 const findOne = async(req,res) => {
     const id = req.params.id;
     const course = await CourseRepository.findOne(id);
@@ -50,6 +43,6 @@ else
     return res.status(500).json({message: 'An error has ocurred.'})
 }
 
-const CoursesController = { create, findAll, findOne, update, remove, findAllWithProfessor }
+const CoursesController = { create, findAll, findOne, update, remove }
 
 export default CoursesController

@@ -1,5 +1,6 @@
 
 import Course from '../models/course.js'
+import Professor from '../models/professor.js'
 
 const create = async (course) => {
 
@@ -16,10 +17,21 @@ const create = async (course) => {
 
 }
 
+const findAllWithProfessor = async() => {
+
+    try {
+        return await Course.findAll({ include: Professor });
+    } catch(error) {
+        console.error(error)
+        return null
+    }
+
+}
+
 const findAll = async() => {
 
     try {
-        return await Course.findAll();
+        return await Course.findAll({ include: Professor });
     } catch(error) {
         console.error(error)
         return null
@@ -79,6 +91,6 @@ const remove = async (id) => {
     }
 }
 
-const CoursesRepository = { create, findAll, findOne, update, remove }
+const CoursesRepository = { create, findAll, findOne, update, remove, findAllWithProfessor }
 
 export default CoursesRepository

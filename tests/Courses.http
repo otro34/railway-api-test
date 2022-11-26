@@ -13,14 +13,15 @@ POST http://localhost:3001/courses
 Content-Type: application/json
 
 {
-    "name": "Object Oriented Programming",
-    "level": 4,
+    "name": "Estructura de Datos",
+    "level": 5,
     "idProfessor": 1
 }
 
 #########
 GET http://localhost:3001/courses
-
+#########
+GET http://localhost:3001/courses/all
 ########
 GET http://localhost:3001/courses/2
 ###########
